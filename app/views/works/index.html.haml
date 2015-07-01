@@ -1,0 +1,18 @@
+.container
+  %h5 勤怠管理
+
+  .row
+    .col.s12
+      %h5.font_size_24= Time.now.strftime("%m/%d")
+      %table.bordered
+        %tr
+          %td 名前
+          %td 入り時間
+          %td 退勤処理
+        
+        - unless @works.blank?
+          - @works.each do |work|
+            %tr
+              %td= work.staff.name
+              %td= work.created_at.strftime("%H:%M")
+              %td= link_to "退勤",work,method: :delete

@@ -1,0 +1,67 @@
+
+%section
+  .row
+    
+    /出退勤は管理のカード
+    .col.m6.s12
+      .card
+        .card-content
+          %span.card-title.black-text 出勤
+          %p 出退はこちらからどうぞ(｀･ω･´)ゞ
+        .card-action
+          = link_to "出勤はこちら",new_work_path
+          = link_to "退勤はこちら",works_path,class: "red-text"
+    
+    /スタッフの管理とか追加とか
+    .col.m6.s12
+      .card
+        .card-content
+          %span.card-title.black-text スタッフの管理
+          %p スタッフの追加とか削除はこちらから
+        .card-action
+          = link_to "管理！",staffs_path
+
+    /在庫管理フォーム
+    .col.s12.m6
+      .card
+        .card-content
+          %span.card-title.black-text 在庫管理
+          %p 端末の入庫はここから処理してね！
+        .card-action
+          = link_to "登録処理(・∀・)！",""
+    
+    /販売登録フォーム
+    .col.s12.m6
+      .card
+        .card-content
+          %span.card-title.black-text 販売登録
+          %p 端末の販売はここから
+        .card-action
+          = link_to "登録処理(・∀・)！",""
+    
+    /販売登録フォーム
+    .col.s12.m4
+      .card
+        .card-content
+          %span.card-title.black-text 料金収納
+          %p 領収の登録
+        .card-action
+          = link_to "登録処理(・∀・)！",""
+    
+    /販売登録フォーム
+    .col.s12.m4
+      .card
+        .card-content
+          %span.card-title.black-text セレクション登録
+          %p セレクション販売登録はこっから
+        .card-action
+          = link_to "登録処理(・∀・)！",""
+    
+    /販売登録フォーム
+    .col.s12.m4
+      .card
+        .card-content
+          %span.card-title.black-text 業務終了
+          %p もはや説明不要(・∀・)！
+        .card-action
+          = link_to "業務終了！",destroy_user_session_path,method: :delete,class: "red-text"

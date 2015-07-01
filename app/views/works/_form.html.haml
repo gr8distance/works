@@ -1,0 +1,19 @@
+= form_for @work do |f|
+  - if @work.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@work.errors.count, "error")} prohibited this work from being saved:"
+      %ul
+        - @work.errors.full_messages.each do |msg|
+          %li= msg
+
+  .input-field
+    = f.text_field :user_id,value: current_user.id,type: "hidden"
+    = f.select :staff_id,@staffs
+  .input-field
+    = f.text_field :staff_code
+    = f.label :staff_code,"クルーコードを入力してね"
+  .input-field
+    = f.label :image
+    = f.file_field :image
+  .input-field
+    %button.btn.waves-effect.waves-light.blue 出勤する(・∀・)！

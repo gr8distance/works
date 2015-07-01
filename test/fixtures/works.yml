@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  staff_id: 
+  start_work: 2015-06-29 16:23:47
+  end_word: 2015-06-29 16:23:47
+  image: MyString
+
+two:
+  user_id: 
+  staff_id: 
+  start_work: 2015-06-29 16:23:47
+  end_word: 2015-06-29 16:23:47
+  image: MyString

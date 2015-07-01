@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @work.user
+%p
+  %b Staff:
+  = @work.staff
+%p
+  %b Start work:
+  = @work.start_work
+%p
+  %b End word:
+  = @work.end_word
+%p
+  %b Image:
+  = @work.image
+
+= link_to 'Edit', edit_work_path(@work)
+\|
+= link_to 'Back', works_path
