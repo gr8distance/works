@@ -1,5 +1,12 @@
-%h1 New work
-
-= render 'form'
-
-= link_to 'Back', works_path
+.container
+  .row
+    %h1 出勤処理はこちらから
+    
+    .col.s12.m8
+      = render 'form'
+    
+    .col.s12.m4
+      %h5 出勤する場合はこちらから
+      %p
+        出勤者の名前を選択してクルーコードを入力します。
+        顔写真を撮影して送信すれば完了です。

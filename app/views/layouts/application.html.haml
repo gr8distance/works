@@ -6,10 +6,15 @@
     = stylesheet_link_tag    'application', media: 'all'
     = csrf_meta_tags
   %body
+    - if user_signed_in? 
+      = render "parts/header"
     .parallax-container
       .parallax
-        = image_tag "yui.jpg"
+        = image_tag "island.jpg",class: "blur"
     = yield
+    = render "parts/footer"
+
+
     = javascript_include_tag 'application'
     = render "home/notice"
 

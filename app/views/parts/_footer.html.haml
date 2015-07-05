@@ -1,0 +1,17 @@
+%footer.page-footer.blue
+  .container
+    .row
+      .col.s12.m8.white-text
+        %h5 仕事をもっと簡単に！
+        %p 誰がやっても同じ仕事は機械に任せましょう(・∀・)！
+
+      .col.s12.m4.white-text
+        %ul
+          - 5.times do |i|
+            %li= link_to "#{i} is number","",class: "white-text"
+
+  .footer-copyright
+    .container.center
+      %address= "© #{Time.now.year} Anging.co.ltd All right reserved."
+      %br/
+      = link_to "more...","http://anging.co.jp",class: "white-text"

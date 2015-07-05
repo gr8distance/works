@@ -1,3 +1,9 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+
+	#URLを判定して白化するコードを選定する
+	if location.pathname.match(/^\/staffs\/[0-9]/)
+		staff_id = $("#staff_id").val()
+		$.get("/staffs/#{staff_id}.json",{},(data)->
+			console.log	data.staff
+			console.log	data.works
+		)

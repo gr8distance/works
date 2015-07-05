@@ -8,6 +8,7 @@
 
   .input-field
     = f.text_field :user_id,value: current_user.id,type: "hidden"
+    = f.text_field :start_work,value: Time.now,type: "hidden"
     = f.select :staff_id,@staffs
   .input-field
     = f.text_field :staff_code

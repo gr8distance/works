@@ -11,6 +11,15 @@ class StaffsController < ApplicationController
   # GET /staffs/1
   # GET /staffs/1.json
   def show
+		@work_times = Work.work_times_at_day_by(@staff)
+
+		respond_to do |fmt|
+			fmt.html{}
+			fmt.json {
+				return_for_json = {staff: @staff,works: @work_times}
+				render json: return_for_json.to_json
+			}
+		end
   end
 
   # GET /staffs/new

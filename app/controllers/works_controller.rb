@@ -7,10 +7,10 @@ class WorksController < ApplicationController
   def index
 		from = Time.now.at_beginning_of_day
 		to = from + 1.day
-		@works = []
+		@workers = []
     Work.where(start_work: from..to).each do |w|
 			if w.end_word.nil?
-				@works << w
+				@workers << w
 			end
 		end
   end
@@ -39,7 +39,6 @@ class WorksController < ApplicationController
 			redirect_to :root,notice:"既に出勤していますよ(・∀・)！"
 		else
 			if work_params[:staff_code] == staff_code
-    		
 				respond_to do |format|
     		  if @work.save
     		    format.html { redirect_to works_path, notice: '出勤処理が完了しました(・∀・)！' }

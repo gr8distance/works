@@ -4,15 +4,20 @@
   .row
     .col.s12
       %h5.font_size_24= Time.now.strftime("%m/%d")
-      %table.bordered
-        %tr
-          %td 名前
-          %td 入り時間
-          %td 退勤処理
-        
-        - unless @works.blank?
-          - @works.each do |work|
+      - if @workers.blank?
+        %h4 みんな退勤済み(´・ω・`)
+        = link_to "出勤する場合はこちらから",new_work_path
+        %br/
+        = link_to "トップページに戻る",:root
+      - else
+        - @workers.each do |work|
+          %table.bordered
+            %tr
+              %td 名前
+              %td 入り時間
+              %td 退勤処理
             %tr
               %td= work.staff.name
               %td= work.created_at.strftime("%H:%M")
-              %td= link_to "退勤",work,method: :delete
+              %td= link_to "退勤",work,method: :delete,class: "btn-flat red white-text waves-light waves-effect"
+

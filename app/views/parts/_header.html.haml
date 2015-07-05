@@ -1,0 +1,9 @@
+%header
+  %nav.blue
+    .container
+      = link_to "Anging.co.ltd",:root,class: "white-text brand-logo thin"
+
+      %ul.right
+        %li= link_to "出勤",new_work_path
+        %li= link_to "退勤",works_path
+        %li= link_to "閉店",destroy_user_session_path,method: :delete,data: {confirm: "お疲れ様です。\n今日の業務は全て終わりましたか？"}

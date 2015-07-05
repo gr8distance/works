@@ -1,12 +1,21 @@
-%p#notice= notice
+%input(id="staff_id" value="#{@staff.id}" type="hidden")
+.container
+  .row
+    .card-panel
+      %span.font_size_22= "#{@staff.name}さんのページ"
+      %p 販売レポートを確認したり出勤時間を確認したりするよ(・∀・)！
+      
+    .card-panel
+      %table.bordered
+        %tr
+          %td 日付
+          %td 勤務時間(計)
 
-%p
-  %b Name:
-  = @staff.name
-%p
-  %b Staff code:
-  = @staff.staff_code
+        - @work_times.each do |k,v|
+          %tr
+            %td= k
+            %td= "#{(v / 60).round(2)}時間"
 
-= link_to 'Edit', edit_staff_path(@staff)
-\|
-= link_to 'Back', staffs_path
+
+
+
