@@ -1,38 +1,51 @@
-.container
-  .row
-    .col.s12
-      .card
-        .card-content
-          %span.card-title.brown-text= "#{current_user.name}:#{Time.now.strftime('%m/%d')}の販売経過"
-        .card-action
-          %button.btn-flat.white-text.blue メール送信
-
-    .col.s12.m6
-      .card-panel
-        %h5 新規販売台数
-        %p.red-text= "本日 #{}台"
-        %p.red-text= "合計 #{}台"
-    
-    .col.s12.m6
-      .card-panel
-        %h5 機種変更台数
-        %p.red-text= "本日 #{}台"
-        %p.red-text= "合計 #{}台"
-
-    .col.s12.m4
-      .card-panel
-        %h5 副商材
-        %p.red-text= "本日 #{}台"
-        %p.red-text= "合計 #{}台"
-    
-    .col.s12.m4
-      .card-panel
-        %h5 DC/タブレット
-        %p.red-text= "本日 #{}台"
-        %p.red-text= "合計 #{}台"
-    
-    .col.s12.m4
-      .card-panel
-        %h5 NW商材
-        %p.red-text= "本日 #{}件"
-        %p.red-text= "合計 #{}件"
+.grey.lighten-4
+  .container
+    .row
+      .col.s12
+        .card
+          .card-content
+            %span.card-title.brown-text= "#{current_user.name}:#{Time.now.strftime('%m/%d')}の販売経過"
+          .card-action
+            %button.btn-flat.white-text.blue 報告のメールを送信
+  
+      .col.s12.m6
+        .card-panel.z-depth-1
+          %h5 新規販売台数
+          %p.red-text= "本日 #{}台"
+          %p.red-text= "合計 #{}台"
+      
+      .col.s12.m6
+        .card-panel.z-depth-1
+          %h5 機種変更台数
+          %p.red-text= "本日 #{}台"
+          %p.red-text= "合計 #{}台"
+  
+      .col.s12.m4
+        .card-panel.z-depth-1
+          %h5 副商材
+          %p.red-text= "本日 #{}台"
+          %p.red-text= "合計 #{}台"
+      
+      .col.s12.m4
+        .card-panel.z-depth-1
+          %h5 DC/タブレット
+          %p.red-text= "本日 #{}台"
+          %p.red-text= "合計 #{}台"
+      
+      .col.s12.m4
+        .card-panel.z-depth-1
+          %h5 NW商材
+          %p.red-text= "本日 #{}件"
+          %p.red-text= "合計 #{}件"
+      
+      .col.s12.m6
+        .card-panel.z-depth-1
+          %h5 セレクション
+          %p.red-text= "本日 #{}円"
+          %p.red-text= "合計 #{}円"
+      
+      .col.s12.m6
+        .card-panel.z-depth-1
+          %h5 料金収納
+          %p.red-text= "本日 #{}円"
+          %p.red-text= "合計 #{}円"
