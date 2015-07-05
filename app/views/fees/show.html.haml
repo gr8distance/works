@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Price:
+  = @fee.price
+%p
+  %b Staff:
+  = @fee.staff
+%p
+  %b User:
+  = @fee.user
+
+= link_to 'Edit', edit_fee_path(@fee)
+\|
+= link_to 'Back', fees_path

@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 	
 	validates_presence_of :name,message: "名前の重複は認められていません"
 	has_many :staffs
+	has_many :fees
 end

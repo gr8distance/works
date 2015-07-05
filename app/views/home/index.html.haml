@@ -6,62 +6,71 @@
     .col.m6.s12
       .card
         .card-content
-          %span.card-title.black-text 出勤
+          %span.card-title.blue-text 出勤
           %p 出退はこちらからどうぞ(｀･ω･´)ゞ
         .card-action
-          = link_to "出勤はこちら",new_work_path
-          = link_to "退勤はこちら",works_path,class: "red-text"
+          = link_to "出勤はこちら",new_work_path,class: "btn-flat white-text blue"
+          = link_to "退勤はこちら",works_path,class: "btn-flat white-text red"
     
     /スタッフの管理とか追加とか
     .col.m6.s12
       .card
         .card-content
-          %span.card-title.black-text スタッフの管理
+          %span.card-title.blue-text スタッフの管理
           %p スタッフの追加とか削除はこちらから
         .card-action
-          = link_to "管理！",staffs_path
+          = link_to "管理！",staffs_path,class: "btn-flat white-text blue"
+    
+    /売上確認
+    .col.s12.m4
+      .card
+        .card-content
+          %span.card-title.black-text 総処理確認
+          %p 売上とか料金収納とかの確認
+        .card-action
+          = link_to "今すぐ確認",user_path(current_user),class: "btn-flat blue white-text"
 
     /在庫管理フォーム
-    .col.s12.m6
+    .col.s12.m4
       .card
         .card-content
           %span.card-title.black-text 在庫管理
-          %p 端末の入庫はここから処理してね！
+          %p 端末の入庫などの処理
         .card-action
-          = link_to "登録処理(・∀・)！",""
+          = link_to "登録処理(・∀・)！","",class: "btn-flat white-text green"
     
     /販売登録フォーム
-    .col.s12.m6
+    .col.s12.m4
       .card
         .card-content
           %span.card-title.black-text 販売登録
           %p 端末の販売はここから
         .card-action
-          = link_to "登録処理(・∀・)！",""
+          = link_to "登録処理(・∀・)！","",class: "btn-flat white-text orange"
     
     /販売登録フォーム
     .col.s12.m4
       .card
         .card-content
-          %span.card-title.black-text 料金収納
+          %span.card-title.blue-text 料金収納
           %p 領収の登録
         .card-action
-          = link_to "登録処理(・∀・)！",""
+          = link_to "料金収納",new_fee_path,class: "btn-flat blue white-text"
     
     /販売登録フォーム
     .col.s12.m4
       .card
         .card-content
-          %span.card-title.black-text セレクション登録
+          %span.card-title.blue-text セレクション登録
           %p セレクション販売登録はこっから
         .card-action
-          = link_to "登録処理(・∀・)！",""
+          = link_to "登録処理(・∀・)！",new_selection_path,class: "btn-flat orange white-text"
     
     /販売登録フォーム
     .col.s12.m4
       .card
         .card-content
-          %span.card-title.black-text 業務終了
+          %span.card-title.blue-text 業務終了
           %p もはや説明不要(・∀・)！
         .card-action
-          = link_to "業務終了！",destroy_user_session_path,method: :delete,class: "red-text"
+          = link_to "業務終了！",destroy_user_session_path,method: :delete,class: "btn-flat white-text red"

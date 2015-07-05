@@ -1,0 +1,24 @@
+= form_for @selection do |f|
+  - if @selection.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@selection.errors.count, "error")} prohibited this selection from being saved:"
+      %ul
+        - @selection.errors.full_messages.each do |msg|
+          %li= msg
+
+  .input-feild
+    = f.label :staff_id,"販売者"
+    = f.select :staff_id,@staffs
+  .input-feild
+    = f.label :price,"価格"
+    = f.number_field :price
+  .input-feild
+    = f.label :types,"商品の種類"
+    = f.select :types,@types
+  .input-feild
+    %p
+      = f.check_box :split
+      = f.label :split,"割賦販売した場合はチェックしてね"
+  .input-field
+    = f.text_field :user_id,type: "hidden",value: current_user.id
+    %button.btn-flat.blue.white-text 販売登録

@@ -1,0 +1,17 @@
+= form_for @fee do |f|
+  - if @fee.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@fee.errors.count, "error")} prohibited this fee from being saved:"
+      %ul
+        - @fee.errors.full_messages.each do |msg|
+          %li= msg
+
+  .input-field
+    = f.select :staff_id,@staffs
+    = f.label :staff_id,"会計者"
+  .input-field
+    = f.number_field :price
+    = f.label :price,"収納金額"
+    = f.text_field :user_id,value: current_user.id,type: "hidden"
+  .input-field
+    %button.btn-flat.blue.white-text 登録

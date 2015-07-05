@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Price:
+  = @selection.price
+%p
+  %b User:
+  = @selection.user
+%p
+  %b Staff:
+  = @selection.staff
+%p
+  %b Split:
+  = @selection.split
+%p
+  %b Types:
+  = @selection.types
+
+= link_to 'Edit', edit_selection_path(@selection)
+\|
+= link_to 'Back', selections_path

@@ -1,0 +1,29 @@
+%h1 Listing selections
+
+%table
+  %thead
+    %tr
+      %th Price
+      %th User
+      %th Staff
+      %th Split
+      %th Types
+      %th
+      %th
+      %th
+
+  %tbody
+    - @selections.each do |selection|
+      %tr
+        %td= selection.price
+        %td= selection.user
+        %td= selection.staff
+        %td= selection.split
+        %td= selection.types
+        %td= link_to 'Show', selection
+        %td= link_to 'Edit', edit_selection_path(selection)
+        %td= link_to 'Destroy', selection, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Selection', new_selection_path
