@@ -3,7 +3,9 @@ class Work < ActiveRecord::Base
   belongs_to :staff
 
 	mount_uploader :image, ImageUploader
-
+	
+	validates_presence_of :image,
+		message: "顔写真を空欄にすることはできません(´・ω・｀)"
 
 	class << self
 

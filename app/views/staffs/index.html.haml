@@ -1,23 +1,27 @@
-%h1 Listing staffs
-
-%table
-  %thead
-    %tr
-      %th Name
-      %th Staff code
-      %th
-      %th
-      %th
-
-  %tbody
-    - @staffs.each do |staff|
-      %tr
-        %td= staff.name
-        %td= staff.staff_code
-        %td= link_to 'Show', staff
-        %td= link_to 'Edit', edit_staff_path(staff)
-        %td= link_to 'Destroy', staff, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Staff', new_staff_path
+.container
+  .row
+    .col.s12
+      %h3= "#{current_user.name}のクルー一覧"
+      %table
+        %thead
+          %tr
+            %th お名前
+            %th 社員ID
+            %th 管理
+      
+        %tbody
+          - @staffs.each do |staff|
+            %tr
+              %td= "#{staff.name}さん"
+              %td= staff.staff_code
+              %td
+                = link_to '情報を見る', staff,class: "blue-text"
+                %br/
+                = link_to '編集', edit_staff_path(staff),class: "teal-text"
+                %br/
+                = link_to '退職', staff, :method => :delete, :data => { :confirm => 'Are you sure?' },class: "red-text"
+    
+    .row
+      .col.s12
+        %br/
+        = link_to '新規クルー登録', new_staff_path,class: "btn waves-effect waves-light cyan"

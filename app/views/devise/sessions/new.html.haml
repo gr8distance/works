@@ -1,7 +1,7 @@
 .container
   .row
     .col.s12
-      %h2 Log in
+      %h2 店舗の開店はこちらから
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field
           = f.label :email
@@ -14,7 +14,6 @@
         - if devise_mapping.rememberable?
           .field
             = f.check_box :remember_me
-            = f.label :remember_me
+            = f.label :remember_me,"しばらく回転したままにしておく"
         .actions
-          = f.submit "Log in"
-      = render "devise/shared/links"
+          %button.btn.waves-effect.waves-light 開店(・∀・)！！

@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 20150705061302) do
     t.integer  "user_id"
     t.integer  "staff_id"
     t.string   "staff_code",                                 null: false
-    t.datetime "start_work", default: '2015-07-01 11:40:15', null: false
+    t.datetime "start_work", default: '2015-07-28 10:29:01', null: false
     t.datetime "end_word"
     t.string   "image",                                      null: false
     t.datetime "created_at",                                 null: false
